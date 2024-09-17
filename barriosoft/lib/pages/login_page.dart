@@ -3,36 +3,46 @@ import 'package:barriosoft/components/my_button.dart';
 import 'package:barriosoft/components/my_textfield.dart';
 import 'package:barriosoft/components/squire_tile.dart';
 
+/// La clase LoginPage es un widget de pantalla completa que representa la pantalla de inicio de sesión de la aplicación.
 class LoginPage extends StatelessWidget {
+  /// Constructor de LoginPage
   LoginPage({super.key});
 
-  // text editing controllers
+  /// Controlador de texto para el campo de texto de nombre de usuario
   final usernameController = TextEditingController();
+
+  /// Controlador de texto para el campo de texto de contraseña
   final passwordController = TextEditingController();
 
-  // sign user in method
+  /// Método para iniciar sesión en la aplicación
   void signUserIn() {}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /// Configuración del fondo de la pantalla
       backgroundColor: const Color.fromARGB(255, 19, 87, 42),
       body: SafeArea(
         child: Center(
           child: Column(
+            /// Configuración de la disposición de los widgets en la pantalla
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              /// Espacio vertical de 50
+              
               const SizedBox(height: 50),
 
-              // logo
-              const Icon(
-                Icons.lock,
-                size: 100,
+              /// Imagen del logo de la aplicación
+              Image.asset(
+                'lib/images/logo.jpg',
+                width: 100,
+                height: 100,
               ),
 
+              /// Espacio vertical de 50
               const SizedBox(height: 50),
 
-              // welcome back, you've been missed!
+              /// Texto de bienvenida
               Text(
                 'Bienvenido de vuelta!',
                 style: TextStyle(
@@ -41,27 +51,30 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
 
+              /// Espacio vertical de 25
               const SizedBox(height: 25),
 
-              // username textfield
+              /// Campo de texto de nombre de usuario
               MyTextField(
                 controller: usernameController,
                 hintText: 'Username',
                 obscureText: false,
               ),
 
+              /// Espacio vertical de 10
               const SizedBox(height: 10),
 
-              // password textfield
+              /// Campo de texto de contraseña
               MyTextField(
                 controller: passwordController,
                 hintText: 'Password',
                 obscureText: true,
               ),
 
+              /// Espacio vertical de 10
               const SizedBox(height: 10),
 
-              // forgot password?
+              /// Texto para recuperar la contraseña
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Row(
@@ -75,16 +88,18 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
 
+              /// Espacio vertical de 25
               const SizedBox(height: 25),
 
-              // sign in button
+              /// Botón de inicio de sesión
               MyButton(
                 onTap: signUserIn,
               ),
 
+              /// Espacio vertical de 50
               const SizedBox(height: 50),
 
-              // or continue with
+              /// Línea divisoria con texto
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Row(
@@ -112,25 +127,27 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
 
+              /// Espacio vertical de 50
               const SizedBox(height: 50),
 
-              // google + apple sign in buttons
+              /// Botones de inicio de sesión con Google y Apple
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // google button
+                  /// Botón de inicio de sesión con Google
                   SquareTile(imagePath: 'lib/images/google.png'),
 
                   SizedBox(width: 25),
 
-                  // apple button
+                  /// Botón de inicio de sesión con Apple
                   SquareTile(imagePath: 'lib/images/apple.png')
                 ],
               ),
 
+              /// Espacio vertical de 50
               const SizedBox(height: 50),
 
-              // not a member? register now
+              /// Texto para registrarse en la aplicación
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
